@@ -26,10 +26,7 @@ class Add extends React.Component {
 
     this.change = this.change.bind(this);
     this.submit = this.submit.bind(this);
-
   }
-
-
 
 
   change(e){
@@ -62,7 +59,7 @@ class Add extends React.Component {
       })
       .catch(() => {
         console.log("false");
-        if (newMovie.title.length < 1 || newMovie.description.length > 40) {
+        if (newMovie.title.length < 1 || newMovie.title.length > 40) {
           this.setState({ titleVisibility: "visible" })
         } else {
           this.setState({ titleVisibility: "hidden" })
@@ -83,8 +80,9 @@ class Add extends React.Component {
           this.setState({ ratingVisibility: "hidden" })
         }
       })
-
   }
+
+
 
   render(){
     if (this.state.finished) {
@@ -92,6 +90,9 @@ class Add extends React.Component {
     }
     return(
       <div>
+        <Helmet>
+          <title>Add</title>
+        </Helmet>
         <form id="addMovie" onSubmit={ this.submit }>
           <label>Title:</label><br />
           <input type="text" name="title" value={ this.state.title } onChange={ this.change }/>

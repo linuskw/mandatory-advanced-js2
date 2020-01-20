@@ -13,6 +13,8 @@ class Main extends React.Component {
       title: "",
       director: "",
   }
+
+  this.deleteMovie = this.deleteMovie.bind(this);
 }
 
   componentDidMount(){
@@ -60,6 +62,12 @@ class Main extends React.Component {
             this.setState({ movies: response.data})
           });
       })
+      .catch((error) => {
+        axios.get('http://3.120.96.16:3001/movies')
+          .then((response) => {
+            this.setState({ movies: response.data})
+          });
+      })
   }
 
 
@@ -67,22 +75,25 @@ class Main extends React.Component {
     console.log(this.state.title);
     return(
       <>
-      <table>
-        <thead>
+        <Helmet>
+          <title>Movies</title>
+        </Helmet>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Director</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            { this.renderTableData() }
+          </tbody>
           <tr>
-            <th>Title</th>
-            <th>Director</th>
-            <th>Rating</th>
+            <td><input type="text" value={ this.state.title } onChange={ e => this.setState({ title: e.target.value}) }/></td>
+            <td><input type="text" value={ this.state.director } onChange={ e => this.setState({ director: e.target.value}) }/></td>
           </tr>
-        </thead>
-        <tbody>
-          { this.renderTableData() }
-        </tbody>
-        <tr>
-          <td><input type="text" value={ this.state.title } onChange={ e => this.setState({ title: e.target.value}) }/></td>
-          <td><input type="text" value={ this.state.director } onChange={ e => this.setState({ director: e.target.value}) }/></td>
-        </tr>
-      </table>
+          </table>
       </>
     )
   }

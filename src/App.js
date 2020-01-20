@@ -3,6 +3,7 @@ import './App.css';
 import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
+import StarRatings from 'react-star-ratings';
 
 import Main from './Main.js';
 import Add from './Add.js';

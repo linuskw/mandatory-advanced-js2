@@ -13,6 +13,7 @@ class Details extends React.Component {
       description: "",
       director: "",
       rating: 0,
+      valid: null,
     }
   }
 
@@ -26,12 +27,18 @@ class Details extends React.Component {
           rating: response.data.rating,
         })
       })
+      .catch((error) => {
+        this.setState({ valid: error.response.status })
+      })
   }
 
   render(){
     console.log("test");
     return(
       <>
+        <Helmet>
+          <title>Details: { this.state.title }</title>
+        </Helmet>
         <h1>{ this.state.title }</h1>
         <h2>{ this.state.director }</h2>
         <p>{ this.state.description }</p>
