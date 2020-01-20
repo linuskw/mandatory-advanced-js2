@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
 import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-import axios from 'axios';
-import StarRatings from 'react-star-ratings';
 
 import Main from './Main.js';
 import Add from './Add.js';
@@ -12,11 +9,6 @@ import Edit from './Edit.js';
 
 
 class App extends React.Component {
-  constructor(props){
-    super(props)
-
-  }
-
   render(){
     return(
       <Router>

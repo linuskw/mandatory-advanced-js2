@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Link, Route, Redirect, BrowserRouter as Router } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 

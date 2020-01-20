@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 
@@ -90,8 +90,8 @@ class Main extends React.Component {
             { this.renderTableData() }
           </tbody>
           <tr>
-            <td><input type="text" value={ this.state.title } onChange={ e => this.setState({ title: e.target.value}) }/></td>
-            <td><input type="text" value={ this.state.director } onChange={ e => this.setState({ director: e.target.value}) }/></td>
+            <td><input type="text" placeholder="Filter Title" value={ this.state.title } onChange={ e => this.setState({ title: e.target.value}) }/></td>
+            <td><input type="text" placeholder="Filter Director"value={ this.state.director } onChange={ e => this.setState({ director: e.target.value}) }/></td>
           </tr>
           </table>
       </>
