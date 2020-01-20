@@ -12,7 +12,7 @@ class Details extends React.Component {
       title: "",
       description: "",
       director: "",
-      rating: 0,
+      rating: null,
       valid: null,
     }
   }
@@ -39,7 +39,7 @@ class Details extends React.Component {
         <Helmet>
           <title>Details: { this.state.title }</title>
         </Helmet>
-        <h1>{ this.state.title }</h1>
+        <h1>{ this.state.valid === 404 ? "Movie does not exist" : this.state.title }</h1>
         <h2>{ this.state.director }</h2>
         <p>{ this.state.description }</p>
         <h1>{ this.state.rating}</h1>

@@ -13,7 +13,7 @@ class Add extends React.Component {
       title: "",
       description: "",
       director: "",
-      rating: 0,
+      rating: null,
       finished: false,
       titleVisibility: "hidden",
       descriptionVisibility: "hidden",

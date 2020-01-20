@@ -12,7 +12,7 @@ class Edit extends React.Component {
       title: "",
       description: "",
       director: "",
-      rating: 0,
+      rating: null,
       finished: null,
       movies: [],
       valid: null,
